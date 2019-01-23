@@ -1,0 +1,20 @@
+﻿@model List<TimePersonApp.Models.Person>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <header></header>
+    <main>
+            @foreach (var person in Model)
+            {
+                <p>@person.Year, @person.Honor, @person.Name, @person.Country, @person.BirthYear,  @person.DeathYear, @person.Title, @person.Category, @person.Context</p>
+
+            }
+    </main>
+    <footer></footer>
+</body>
+</html>
+

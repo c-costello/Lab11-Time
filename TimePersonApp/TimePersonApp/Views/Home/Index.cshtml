@@ -1,14 +1,22 @@
-﻿<!DOCTYPE html>
+﻿@model List<TimePersonApp.Models.Person>
+
+<!DOCTYPE html>
 <html>
 <head>
 
 </head>
 <body>
     <header>
-
+    <link href="~/Style.css" rel="stylesheet" />
     </header>
     <main>
-
+    <form method="post">
+        <label name="startYear">Start</label>
+        <input type="number" name="startYear" />
+        <label name="endYear">End</label>
+        <input type="number" name="endYear" />
+        <button type="submit">Submit</button>
+    </form>
     </main>
     <footer>
 
