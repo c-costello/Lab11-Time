@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link href="~/Style.css" rel="stylesheet"/>
 </head>
 <body>
     <header></header>
@@ -18,7 +18,7 @@
                     <td>Country</td>
                     <td>Birth Year</td>
                     <td>Death Year</td>
-                    <td> Title</td>
+                    <td>Title</td>
                     <td>Categorty</td>
                     <td>Context</td>
                 </tr>
@@ -26,17 +26,41 @@
             <tbody>
                 @foreach (var person in Model)
                 {
-                    <tr>
+                <tr>
+                    @if (person.Year == 0)
+                    {
+                        <td></td>
+                    }
+                    else
+                    {
                         <td>@person.Year</td>
-                        <td>@person.Honor</td>
-                        <td>@person.Name</td>
-                        <td>@person.Country</td>
+                    }
+
+
+                    <td>@person.Honor</td>
+                    <td>@person.Name</td>
+                    <td>@person.Country</td>
+
+                    @if (person.BirthYear == 0)
+                    {
+                        <td></td>
+                    }
+                    else
+                    {
                         <td>@person.BirthYear</td>
+                    }
+                    @if (person.DeathYear == 0)
+                    {
+                        <td></td>
+                    }
+                    else
+                    {
                         <td>@person.DeathYear</td>
-                        <td>@person.Title</td>
-                        <td>@person.Category</td>
-                        <td>@person.Context</td>
-                    </tr>
+                    }
+                    <td>@person.Title</td>
+                    <td>@person.Category</td>
+                    <td>@person.Context</td>
+                </tr>
                 }
 
             </tbody>
