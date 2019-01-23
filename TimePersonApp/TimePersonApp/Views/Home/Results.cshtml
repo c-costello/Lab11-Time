@@ -8,11 +8,39 @@
 <body>
     <header></header>
     <main>
-            @foreach (var person in Model)
-            {
-                <p>@person.Year, @person.Honor, @person.Name, @person.Country, @person.BirthYear,  @person.DeathYear, @person.Title, @person.Category, @person.Context</p>
 
-            }
+        <table>
+            <thead>
+                <tr>
+                    <td>Year</td>
+                    <td>Honor</td>
+                    <td>Name</td>
+                    <td>Country</td>
+                    <td>Birth Year</td>
+                    <td>Death Year</td>
+                    <td> Title</td>
+                    <td>Categorty</td>
+                    <td>Context</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var person in Model)
+                {
+                    <tr>
+                        <td>@person.Year</td>
+                        <td>@person.Honor</td>
+                        <td>@person.Name</td>
+                        <td>@person.Country</td>
+                        <td>@person.BirthYear</td>
+                        <td>@person.DeathYear</td>
+                        <td>@person.Title</td>
+                        <td>@person.Category</td>
+                        <td>@person.Context</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
     </main>
     <footer></footer>
 </body>
