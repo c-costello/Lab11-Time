@@ -11,8 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="wwwroot\" />
+    <None Include="wwwroot\personOfTheYear.csv" />
   </ItemGroup>
 
 </Project>
