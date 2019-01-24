@@ -3,12 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="~/Reset.css" rel="stylesheet"/>
     <link href="~/Style.css" rel="stylesheet"/>
 </head>
 <body>
     <header></header>
     <main>
-
+        <!-- create content table -->
         <table>
             <thead>
                 <tr>
@@ -24,6 +25,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- create row and assign values to table cells-->
                 @foreach (var person in Model)
                 {
                 <tr>
@@ -70,3 +72,4 @@
 </body>
 </html>
 
+s

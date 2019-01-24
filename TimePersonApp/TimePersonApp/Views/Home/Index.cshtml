@@ -15,12 +15,13 @@
             <h2>Person of the Year</h2>
         </section>
         <section>
+            <!-- takes user input and sends it to the results page-->
             <form method="post">
                 
                 <label name="startYear">Start Year</label>
-                <input type="number" name="startYear" />
+                <input type="number" min=1926 max=2016 name="startYear" />
                 <label name="endYear">End Year</label>
-                <input type="number" name="endYear" />
+                <input type="number" min=1926 max=2016 name="endYear" />
                 <button type="submit">Submit</button>
             </form>
         </section>

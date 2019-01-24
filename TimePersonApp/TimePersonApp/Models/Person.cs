@@ -9,6 +9,8 @@ namespace TimePersonApp.Models
 {
     public class Person
     {
+
+        //Properties
         public int Year { get; set; }
         public string Honor { get; set; }
         public string Name { get; set; }
@@ -20,17 +22,26 @@ namespace TimePersonApp.Models
         public string Context { get; set; }
 
 
-
+        /// <summary>
+        /// Based on user input, returns a list of people between the two given years
+        /// </summary>
+        /// <param name="startYear">int</param>
+        /// <param name="endYear">int</param>
+        /// <returns>List\<Person\></returns>
         public static List<Person> GetPersons(int startYear, int endYear)
         {
-            string path = "~/wwwroot/personsOfTheYear.csv";
-            string csvData = File.ReadAllText("C:/Users/clari/source/repos/Lab11-Time/TimePersonApp/TimePersonApp/wwwroot/personOfTheYear.csv");
+            //Read FILE
+            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../../../wwwroot/personOfTheYear.csv");
+            string csvData = File.ReadAllText(path);
+
+            //Covert string into list of strings
             List<string> list = new List<string>();
             foreach (var line in csvData.Split('\n'))
             {
                 list.Add(line);
             }
             list.RemoveAt(0);
+            //Break down and assign properties to individual Persons and add them to people list
             List<Person> people = new List<Person>();
             foreach (var line in list)
             {
@@ -69,12 +80,14 @@ namespace TimePersonApp.Models
                 person.Category = line.Split(',')[7];
                 person.Context = line.Split(',')[8];
 
+
+                //filter people
                 if(person.Year >= startYear && person.Year <= endYear)
                 {
                     people.Add(person);
                 }
             }
-
+            //return list
             return people;
         }
     }
